@@ -16,7 +16,15 @@ struct ContentView: View {
                         .resizable()
                         .ignoresSafeArea()
                         .scaledToFill()
-                        
+                        .overlay(alignment: .bottom) {
+                            if let classification {
+                                Text(classification)
+                                    .padding(8)
+                                    .background(.ultraThinMaterial)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .padding()
+                            }
+                        }
                 } else {
                     Text("Choose an image 📷 or 🖼️")
                     .font(.title3)
