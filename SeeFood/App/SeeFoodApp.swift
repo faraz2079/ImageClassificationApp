@@ -11,7 +11,9 @@ import SwiftUI
 struct SeeFoodApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let classifier: ImageClassifying = MobileNetV2Classifier()
+            
+            ClassificationView(vm: .init(classifier: classifier))
         }
     }
 }

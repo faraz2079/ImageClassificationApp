@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CameraView: UIViewControllerRepresentable {
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) var dismiss
     @Binding var image: UIImage?
     var sourceType: UIImagePickerController.SourceType = .camera
     
@@ -25,22 +25,7 @@ struct CameraView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
     
-    func makeCoordinator() -> Coordinator { Coordinator(parent: self) }
+    func makeCoordinator() -> PickerView { Coordinator(parent: self) }
     
-    final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: CameraView
-        init(parent: CameraView) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            parent.image = (info[.originalImage] as? UIImage)
-            parent.dismiss()
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.dismiss()
-        }
-    }
 }
 
