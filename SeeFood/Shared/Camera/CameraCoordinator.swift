@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+final class CameraCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     let parent: CameraView
     init(parent: CameraView) {
         self.parent = parent

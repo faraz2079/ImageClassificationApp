@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CameraView: UIViewControllerRepresentable {
+    typealias Coordinator = CameraCoordinator
+    
     @Environment(\.dismiss) var dismiss
     @Binding var image: UIImage?
     var sourceType: UIImagePickerController.SourceType = .camera
@@ -25,7 +27,7 @@ struct CameraView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
     
-    func makeCoordinator() -> PickerView { Coordinator(parent: self) }
+    func makeCoordinator() -> CameraCoordinator { CameraCoordinator(parent: self) }
     
 }
 
