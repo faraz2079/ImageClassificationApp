@@ -8,13 +8,16 @@ struct MobileNetV2Classifier: ImageClassifying {
         guard let ci = CIImage(image: image) else {
             throw ClassificationError.noImage
         }
-        let vnModel = try VNCoreMLModel(for: MobileNetV2(configuration: .init()).model)
+        let vnModel = try VNCoreMLModel(for: MobileNetV2(configuration: MLModelConfiguration()).model) // MLModelConfiguration() -> .init()
         
         return try await withCheckedThrowingContinuation { cont in
             let req = VNCoreMLRequest(model: vnModel) { req, err in
-                if let err { cont.resume(throwing: ClassificationError.inferenceFailed(err.localizedDescription)); return }
+                if let err { cont.resume(throwing: ClassificationError.inferenceFailed(err.localizedDescription))
+                    return
+                }
                 guard let best = req.results?.first as? VNClassificationObservation else {
-                    cont.resume(throwing: ClassificationError.inferenceFailed("No results")); return
+                    cont.resume(throwing: ClassificationError.inferenceFailed("No results"))
+                    return
                 }
                 cont.resume(returning: Classification(label: best.identifier, confidence: Double(best.confidence)))
             }
