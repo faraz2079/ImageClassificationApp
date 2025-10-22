@@ -1,46 +1,26 @@
-# 🍔 SeeFood – SwiftUI Image Classifier App
+# 🍔 SeeFood – Clean SwiftUI Image Classifier App
 
-**SeeFood** is an iOS app built with **SwiftUI**, **Core ML**, and **Vision** that recognizes objects in photos taken from the camera or selected from the photo library.
+**SeeFood** is an iOS app built with **SwiftUI**, **Core ML**, and **Vision** that classifies objects in photos captured from the camera or selected from the photo library.
 
-This project includes **two interchangeable implementations** for image classification:
-1. 🧠 **Apple’s built-in Vision Classifier** – the default implementation (`VNClassifyImageRequest`)
-2. ⚡ **MobileNetV2 Core ML Model** – a pre-trained custom model integrated into the project
-
-Both implementations exist in the source code.  
-The **default (active)** one is Apple’s built-in Vision classifier, and the **second one (MobileNetV2)** is **commented out**.  
-You can switch between them easily by commenting/uncommenting the `detect(uiimage:)` function in **ContentView.swift**.
+The project has been fully refactored to follow **SOLID principles**, **clean architecture**, and **MVVM** design — making the code **testable**, **maintainable**, and **easy to extend**.
 
 ---
 
-## 🛠️ Technologies Used
+## 🧠 Two Interchangeable ML Implementations
 
-| Framework | Purpose |
-|------------|----------|
-| **SwiftUI** | Modern declarative UI |
-| **Core ML** | Loads and runs the MobileNetV2 model |
-| **Vision** | Handles image requests & classification |
-| **UIKit (bridged)** | Accesses camera/photo picker via `UIViewControllerRepresentable` |
+SeeFood supports **two modular classification strategies**, both conforming to a shared `ImageClassifying` protocol:
 
----
+| Implementation | Description |
+|----------------|--------------|
+| 🧩 **Apple Vision Built-in Classifier** | The **default** implementation using `VNClassifyImageRequest`. No `.mlmodel` file needed; uses Apple’s on-device Vision model. |
+| ⚡ **MobileNetV2 Core ML Model** | A **custom pre-trained neural network** integrated via Core ML. Demonstrates how to plug in your own model. |
 
-## ✨ Features
+Both exist in the codebase under  
+`Features/Classification/Services/` → `VisionBuiltinClassifier.swift` & `MobileNetV2Classifier.swift`.  
+You can swap them by changing **one line** in `SeeFoodApp.swift`:
 
-- 📷 Capture a photo with the camera  
-- 🖼️ Select a photo from the library  
-- 🧩 Run object recognition using **two different ML approaches**
-- 💬 Display classification label and confidence overlay on the image  
-- 💡 Built 100% in **SwiftUI** (no storyboard)
+```swift
+let classifier: ImageClassifying = VisionBuiltinClassifier()
+// let classifier: ImageClassifying = MobileNetV2Classifier()
+```
 
----
-
-## 🧩 How It Works
-
-1. The user taps either the **Camera** or **Gallery** button in the navigation bar.  
-2. The app presents `UIImagePickerController` (wrapped for SwiftUI).  
-3. The captured or selected image is stored in `@State image`.  
-4. `onChange(of: image)` triggers the Vision request:  
-
-   ```swift
-   let vnModel = try! VNCoreMLModel(for: MobileNetV2(configuration: .init()).model)
-   let request = VNCoreMLRequest(model: vnModel)
-   try? VNImageRequestHandler(ciImage: CIImage(image: uiImage)!).perform([request])
