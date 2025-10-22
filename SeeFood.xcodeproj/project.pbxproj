@@ -6,9 +6,47 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		D0E79A892EA9285200CF7FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D050A06E2EA1705A00591AF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D050A0752EA1705A00591AF7;
+			remoteInfo = SeeFood;
+		};
+		D0E79A982EA9287300CF7FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D050A06E2EA1705A00591AF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D050A0752EA1705A00591AF7;
+			remoteInfo = SeeFood;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D050A0762EA1705A00591AF7 /* SeeFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E79A852EA9285200CF7FED /* SeeFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeeFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E79A922EA9287300CF7FED /* SeeFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeeFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D07748892EA9788B005D2980 /* Exceptions for "Tests" folder in "SeeFoodTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ClassificationTests/ClassificationViewModelTests.swift,
+				ClassificationTests/MockClassifier.swift,
+			);
+			target = D0E79A842EA9285200CF7FED /* SeeFoodTests */;
+		};
+		D0E79AA92EA929E600CF7FED /* Exceptions for "Tests" folder in "SeeFoodUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ClassificationTests/ClassificationViewModelTests.swift,
+				ClassificationTests/MockClassifier.swift,
+			);
+			target = D0E79A912EA9287300CF7FED /* SeeFoodUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D050A0782EA1705A00591AF7 /* SeeFood */ = {
@@ -16,10 +54,33 @@
 			path = SeeFood;
 			sourceTree = "<group>";
 		};
+		D0E79AA62EA929E600CF7FED /* Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D07748892EA9788B005D2980 /* Exceptions for "Tests" folder in "SeeFoodTests" target */,
+				D0E79AA92EA929E600CF7FED /* Exceptions for "Tests" folder in "SeeFoodUITests" target */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D050A0732EA1705A00591AF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E79A822EA9285200CF7FED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E79A8F2EA9287300CF7FED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D050A0782EA1705A00591AF7 /* SeeFood */,
+				D0E79AA62EA929E600CF7FED /* Tests */,
 				D050A0772EA1705A00591AF7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				D050A0762EA1705A00591AF7 /* SeeFood.app */,
+				D0E79A852EA9285200CF7FED /* SeeFoodTests.xctest */,
+				D0E79A922EA9287300CF7FED /* SeeFoodUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +134,49 @@
 			productReference = D050A0762EA1705A00591AF7 /* SeeFood.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D0E79A842EA9285200CF7FED /* SeeFoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0E79A8B2EA9285200CF7FED /* Build configuration list for PBXNativeTarget "SeeFoodTests" */;
+			buildPhases = (
+				D0E79A812EA9285200CF7FED /* Sources */,
+				D0E79A822EA9285200CF7FED /* Frameworks */,
+				D0E79A832EA9285200CF7FED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0E79A8A2EA9285200CF7FED /* PBXTargetDependency */,
+			);
+			name = SeeFoodTests;
+			packageProductDependencies = (
+			);
+			productName = SeeFoodTests;
+			productReference = D0E79A852EA9285200CF7FED /* SeeFoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0E79A912EA9287300CF7FED /* SeeFoodUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0E79A9A2EA9287300CF7FED /* Build configuration list for PBXNativeTarget "SeeFoodUITests" */;
+			buildPhases = (
+				D0E79A8E2EA9287300CF7FED /* Sources */,
+				D0E79A8F2EA9287300CF7FED /* Frameworks */,
+				D0E79A902EA9287300CF7FED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0E79A992EA9287300CF7FED /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D0E79AA62EA929E600CF7FED /* Tests */,
+			);
+			name = SeeFoodUITests;
+			packageProductDependencies = (
+			);
+			productName = SeeFoodUITests;
+			productReference = D0E79A922EA9287300CF7FED /* SeeFoodUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -83,6 +190,14 @@
 					D050A0752EA1705A00591AF7 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
+					D0E79A842EA9285200CF7FED = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = D050A0752EA1705A00591AF7;
+					};
+					D0E79A912EA9287300CF7FED = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = D050A0752EA1705A00591AF7;
+					};
 				};
 			};
 			buildConfigurationList = D050A0712EA1705A00591AF7 /* Build configuration list for PBXProject "SeeFood" */;
@@ -94,18 +209,37 @@
 			);
 			mainGroup = D050A06D2EA1705A00591AF7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D07748822EA9775D005D2980 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D050A0772EA1705A00591AF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D050A0752EA1705A00591AF7 /* SeeFood */,
+				D0E79A842EA9285200CF7FED /* SeeFoodTests */,
+				D0E79A912EA9287300CF7FED /* SeeFoodUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D050A0742EA1705A00591AF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E79A832EA9285200CF7FED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E79A902EA9287300CF7FED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +256,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0E79A812EA9285200CF7FED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E79A8E2EA9287300CF7FED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0E79A8A2EA9285200CF7FED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D050A0752EA1705A00591AF7 /* SeeFood */;
+			targetProxy = D0E79A892EA9285200CF7FED /* PBXContainerItemProxy */;
+		};
+		D0E79A992EA9287300CF7FED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D050A0752EA1705A00591AF7 /* SeeFood */;
+			targetProxy = D0E79A982EA9287300CF7FED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D050A07F2EA1705C00591AF7 /* Debug */ = {
@@ -310,6 +471,88 @@
 			};
 			name = Release;
 		};
+		D0E79A8C2EA9285200CF7FED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95BSUA32AQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.farazChahybakhsh2079.ThisIsMe.SeeFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeeFood.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SeeFood";
+			};
+			name = Debug;
+		};
+		D0E79A8D2EA9285200CF7FED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95BSUA32AQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.farazChahybakhsh2079.ThisIsMe.SeeFoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeeFood.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SeeFood";
+			};
+			name = Release;
+		};
+		D0E79A9B2EA9287300CF7FED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95BSUA32AQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.farazChahybakhsh2079.ThisIsMe.SeeFoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SeeFood;
+			};
+			name = Debug;
+		};
+		D0E79A9C2EA9287300CF7FED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95BSUA32AQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.farazChahybakhsh2079.ThisIsMe.SeeFoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SeeFood;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -331,7 +574,36 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D0E79A8B2EA9285200CF7FED /* Build configuration list for PBXNativeTarget "SeeFoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E79A8C2EA9285200CF7FED /* Debug */,
+				D0E79A8D2EA9285200CF7FED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0E79A9A2EA9287300CF7FED /* Build configuration list for PBXNativeTarget "SeeFoodUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E79A9B2EA9287300CF7FED /* Debug */,
+				D0E79A9C2EA9287300CF7FED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D07748822EA9775D005D2980 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = D050A06E2EA1705A00591AF7 /* Project object */;
 }
